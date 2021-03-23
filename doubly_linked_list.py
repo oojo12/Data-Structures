@@ -1,3 +1,6 @@
+'''
+Class requires user to update the head reference on inserts
+'''
 class Node:
     def __init__(self, curr_val, prev_val):
         self.val = curr_val
