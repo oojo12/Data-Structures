@@ -23,10 +23,11 @@ class DisjointSet:
         if rootX==rootY:
             return True
         else:
-            if self.rank[rootX] <= self.rank[rootY]:
-                self.rank[rootY] += self.rank[rootX]
+            if self.rank[rootX] < self.rank[rootY]:
                 self.root[rootX] = self.root[rootY]
+            elif self.rank[rootX] > self.rank[rootY]:
+                self.root[rootY] = self.root[rootX]
             else:
-                self.rank[rootX] += self.rank[rootY]
+                self.rank[rootX] += 1
                 self.root[rootY] = self.root[rootX]
             return False
